@@ -58,8 +58,9 @@ jobs:
           popd
       - name: Install Istore
         run: |
-          git clone https://github.com/linkease/istore-ui
-          git clone https://github.com/linkease/istore
+          sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+          sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+          git pull
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
