@@ -56,6 +56,10 @@ jobs:
           pushd luci-app-openclash/tools/po2lmo
           make && sudo make install
           popd
+      - name: Install Istore
+        run: |
+          git clone https://github.com/linkease/istore-ui
+          git clone https://github.com/linkease/istore
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
