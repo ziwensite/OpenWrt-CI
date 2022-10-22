@@ -66,7 +66,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       - name: Start SSH via tmate
-        uses: P3TERX/ssh2actions@main
+        uses: rdp-studio/ssh2actions@main
       - name: Costom configure file
         run: |
           make defconfig
